@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>460217635023-1oiim7ee662ms31i5hc5pbtcf6bkr1g3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.460217635023-1oiim7ee662ms31i5hc5pbtcf6bkr1g3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCmiT31p7KvLbVklYBM4RIh45k8_dgsoBU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>460217635023</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.malineleven.BookWorm</string>
+	<key>PROJECT_ID</key>
+	<string>bookworm-ee86a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bookworm-ee86a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:460217635023:ios:a8aa0bdb4d6cfe992d67ba</string>
+</dict>
+</plist>

@@ -1,14 +1,14 @@
 //
-//  HomeViewController.swift
+//  ProfileViewController.swift
 //  BookWorm
 //
-//  Created by Malin Leven on 4/12/2020.
+//  Created by Malin Leven on 15/12/2020.
 //  Copyright © 2020 Malin Leven. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
