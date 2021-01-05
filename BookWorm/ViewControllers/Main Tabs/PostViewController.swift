@@ -1,27 +1,21 @@
 //
-//  HomeViewController.swift
+//  PostViewController.swift
 //  BookWorm
 //
-//  Created by Malin Leven on 4/12/2020.
+//  Created by Malin Leven on 16/12/2020.
 //  Copyright © 2020 Malin Leven. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    
-    override func viewDidLoad() {
-         super.viewDidLoad()
-         
-         //Setting up elements on the view
-         setUpElements()
+class PostViewController: UIViewController {
 
-     }
-     
-     func setUpElements(){
-    }
-         
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.blue
+
         // Do any additional setup after loading the view.
+    }
     
 
     /*

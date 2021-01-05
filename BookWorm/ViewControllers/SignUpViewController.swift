@@ -13,6 +13,8 @@ import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
     
+    private var myBool:Bool = false
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var usernameTextField: UITextField!
@@ -28,7 +30,6 @@ class SignUpViewController: UIViewController {
         
         //Setting up elements on the view
             setUpElements()
-
     }
     
     func setUpElements()
@@ -36,6 +37,23 @@ class SignUpViewController: UIViewController {
         //Hiding the error label
         errorLabel.alpha = 0
     }
+    
+    //Function to check if log in button should perform segue to home screen
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
+    {
+        if identifier == "segue2"
+        {
+            //Checking if the log in worked
+            if  myBool == false
+            {
+                //If log in was not successfull, segue to the home page will not be performed
+                return false
+            }
+        }
+        //If log in was successful, segue to the home page
+        return true
+    }
+
     
     /*  Check the text fields and validate that the data is correct. If
         everything is correct it will return nil, if not it will display
@@ -76,9 +94,11 @@ class SignUpViewController: UIViewController {
         {
             //There is something wrong with the text fields, display corresponding error message
             showError(message: error!)
+            self.myBool = false
         }
         else
         {
+            self.myBool = true
             //Create cleaned versions of the data
             let username = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -103,38 +123,22 @@ class SignUpViewController: UIViewController {
                             self.showError(message: "Error saving user data")
                         }
                     }
-                    //Transition to the home screen
-                    self.transitionToHome()
                 }
             }
         }
     }
     
-    @IBAction func backButtonTapped(_ sender: Any) {
-        transitionToMain()
-    }
+//    @IBAction func backButtonTapped(_ sender: Any) {
+//        transitionToMain()
+//    }
     
     
     func showError(  message: String)
     {
         errorLabel.text = message
         errorLabel.alpha = 1
-    }
-    
-    func transitionToHome()
-    {
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.StoryBoard.homeViewController) as? HomeViewController
         
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
     }
-    
-    func transitionToMain()
-    {
-        let mainViewController = storyboard?.instantiateViewController(identifier: Constants.StoryBoard.mainViewController) as? ViewController
-        
-        view.window?.rootViewController = mainViewController
-        view.window?.makeKeyAndVisible()
-    }
+
 
 }

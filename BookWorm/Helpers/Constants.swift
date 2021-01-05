@@ -15,7 +15,6 @@ struct Constants
     {
         static let homeViewController = "HomeVC"
         static let mainViewController = "MainVC"
-        static let profileViewController = "ProfileVC"
     }
     
 }

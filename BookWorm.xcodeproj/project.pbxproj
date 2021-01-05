@@ -20,6 +20,7 @@
 		EE65708925876442007EEF86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE65708825876442007EEF86 /* GoogleService-Info.plist */; };
 		EEA31C302588FC0C00CAF96C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA31C2F2588FC0C00CAF96C /* ProfileViewController.swift */; };
 		EEA31C352589BEF000CAF96C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA31C342589BEF000CAF96C /* PostViewController.swift */; };
+		EEC9719425A3E93D00A8A5E4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC9719325A3E93D00A8A5E4 /* SearchViewController.swift */; };
 		EED003D5257F2FF3002C51AC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED003D4257F2FF3002C51AC /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		EE65708825876442007EEF86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEA31C2F2588FC0C00CAF96C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EEA31C342589BEF000CAF96C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		EEC9719325A3E93D00A8A5E4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EED003D4257F2FF3002C51AC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +115,6 @@
 				EEA31C312589BCD600CAF96C /* Main Tabs */,
 				EE454F2E2579F6AD004FC2C5 /* ViewController.swift */,
 				EE454F3E2579F711004FC2C5 /* SignUpViewController.swift */,
-				EEA31C342589BEF000CAF96C /* PostViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -131,7 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				EE454F422579F747004FC2C5 /* HomeViewController.swift */,
+				EEC9719325A3E93D00A8A5E4 /* SearchViewController.swift */,
 				EEA31C2F2588FC0C00CAF96C /* ProfileViewController.swift */,
+				EEA31C342589BEF000CAF96C /* PostViewController.swift */,
 			);
 			path = "Main Tabs";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC9719425A3E93D00A8A5E4 /* SearchViewController.swift in Sources */,
 				EEA31C352589BEF000CAF96C /* PostViewController.swift in Sources */,
 				EE454F2F2579F6AD004FC2C5 /* ViewController.swift in Sources */,
 				EE454F2B2579F6AD004FC2C5 /* AppDelegate.swift in Sources */,

@@ -11,6 +11,8 @@ import FirebaseAuth
 
 class ViewController: UIViewController
 {
+        
+    private var myBool:Bool = false
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -21,7 +23,7 @@ class ViewController: UIViewController
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var signUpButton: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,6 +38,23 @@ class ViewController: UIViewController
                 
        //Set up the utilities and stuff
         Utilities.circularButton(button: loginButton)
+        
+    }
+    
+    //Function to check if log in button should perform segue to home screen
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
+    {
+        if identifier == "segue1"
+        {
+            //Checking if the log in worked
+            if  myBool == false
+            {
+                //If log in was not successfull, segue to the home page will not be performed
+                return false
+            }
+        }
+        //If log in was successful, segue to the home page
+        return true
     }
 
     @IBAction func loginButtonTapped(_ sender: Any)
@@ -44,29 +63,25 @@ class ViewController: UIViewController
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        
         //Signing in the user
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             
             if error != nil
             {
-                //Couldn't sign in
+                //Couldn't sign in, showing error on the screen
                 self.errorLabel.text = error!.localizedDescription
                 self.errorLabel.alpha = 1
+                //Setting boolean variable to false so segue will not be performed
+                self.myBool = false
             }
             else
             {
-                self.transitionToHome()
+                //Setting boolean variable to true so segue to home view will be performed
+                self.myBool = true
             }
         }
     }
-    
-    func transitionToHome()
-    {
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.StoryBoard.homeViewController) as? HomeViewController
-        
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
-    }
-    
+
 }
 

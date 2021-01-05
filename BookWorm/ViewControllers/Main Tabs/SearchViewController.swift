@@ -1,14 +1,14 @@
 //
-//  PostViewController.swift
+//  SearchViewController.swift
 //  BookWorm
 //
-//  Created by Malin Leven on 16/12/2020.
-//  Copyright © 2020 Malin Leven. All rights reserved.
+//  Created by Malin Leven on 5/1/2021.
+//  Copyright © 2021 Malin Leven. All rights reserved.
 //
 
 import UIKit
 
-class PostViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
