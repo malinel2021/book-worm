@@ -282,8 +282,8 @@
                         <outlet property="blurbTextField" destination="FDQ-5n-E8b" id="pSP-eq-D6A"/>
                         <outlet property="bookAuthorTextField" destination="McX-uc-bX3" id="9Zj-CZ-IZc"/>
                         <outlet property="postButton" destination="QJR-VP-pOg" id="ozm-ub-oRi"/>
-                        <outlet property="postTextField" destination="2wH-Yw-XIn" id="DGV-iD-16S"/>
                         <outlet property="ratingSlider" destination="q3L-Ce-7bM" id="Rmb-ra-sP7"/>
+                        <outlet property="reviewTextField" destination="2wH-Yw-XIn" id="4Sq-yJ-sPa"/>
                         <outlet property="titleTextField" destination="Gy8-wp-kqU" id="bAA-gL-CTS"/>
                     </connections>
                 </viewController>

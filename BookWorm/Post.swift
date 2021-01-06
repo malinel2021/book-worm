@@ -28,11 +28,12 @@ class Post
     }
     
     
-    init(bookName: String, bookAuthor: String, blurb: String, reviewString: String)
+    init(bookName: String, bookAuthor: String, blurb: String, rating: Int, reviewString: String)
     {
         self.bookName = bookName
         self.bookAuthor = bookAuthor
         self.blurb = blurb
+        self.ratingNumber = rating
         self.reviewString = reviewString
     }
     
@@ -100,10 +101,8 @@ class Post
     
     func getWholePost() -> String
     {
-//        let ratingString = String(ratingNumber)
-        
-        
-        return bookName + bookAuthor + blurb + reviewString
+        let ratingString = String(ratingNumber)
+        return bookName + bookAuthor + blurb + ratingString + reviewString
     }
 }
 

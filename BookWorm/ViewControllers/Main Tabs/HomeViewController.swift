@@ -38,8 +38,8 @@ class HomeViewController: UIViewController {
                     allPosts.append(posts)
                 }
                 self.homeLabel.text = allPosts.joined()
-                print("Here is posts:", posts)
-                print("Here is the all posts array:", allPosts)
+//                print("Here is posts:", posts)
+//                print("Here is the all posts array:", allPosts)
             }
             
         }
