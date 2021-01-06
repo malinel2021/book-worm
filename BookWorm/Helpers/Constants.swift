@@ -11,10 +11,17 @@ import Foundation
 struct Constants
 {
     
-    struct StoryBoard
-    {
-        static let homeViewController = "HomeVC"
-        static let mainViewController = "MainVC"
-    }
+    static let homeViewController = "HomeVC"
+    static let mainViewController = "MainVC"
+    static let faveFood = "Fave food"
+    static let faveDrink = "Fave drink"
+    static let hateFood = "Hate food"
+    static let hateDrink = "Hate drink"
+    static let food = "food"
+
+
+
+    
+    
     
 }

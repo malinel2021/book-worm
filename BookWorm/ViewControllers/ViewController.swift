@@ -11,9 +11,8 @@ import FirebaseAuth
 
 class ViewController: UIViewController
 {
-        
     private var myBool:Bool = false
-    
+        
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -77,8 +76,8 @@ class ViewController: UIViewController
             }
             else
             {
-                //Setting boolean variable to true so segue to home view will be performed
-                self.myBool = true
+                //Performing segue
+                self.performSegue(withIdentifier: "segue1", sender: (Any).self)
             }
         }
     }

@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         //Setting up elements on the view
             setUpElements()
     }
@@ -98,7 +98,6 @@ class SignUpViewController: UIViewController {
         }
         else
         {
-            self.myBool = true
             //Create cleaned versions of the data
             let username = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -125,6 +124,9 @@ class SignUpViewController: UIViewController {
                     }
                 }
             }
+            //Performing segue
+            self.performSegue(withIdentifier: "segue2", sender: (Any).self)
+            let currentUser = User(username: username)
         }
     }
     

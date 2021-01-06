@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		65EE10A52A9F6B28B3EF3532 /* Pods_BookWorm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5AB5441B21E6F3283537AA /* Pods_BookWorm.framework */; };
+		EE20666625A5AD81009BCF4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20666525A5AD81009BCF4D /* User.swift */; };
+		EE20666825A5F945009BCF4D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20666725A5F945009BCF4D /* Post.swift */; };
 		EE454F2B2579F6AD004FC2C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE454F2A2579F6AD004FC2C5 /* AppDelegate.swift */; };
 		EE454F2D2579F6AD004FC2C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE454F2C2579F6AD004FC2C5 /* SceneDelegate.swift */; };
 		EE454F2F2579F6AD004FC2C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE454F2E2579F6AD004FC2C5 /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 		3B7EDE236882487C20C11D06 /* Pods-BookWorm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookWorm.release.xcconfig"; path = "Target Support Files/Pods-BookWorm/Pods-BookWorm.release.xcconfig"; sourceTree = "<group>"; };
 		69B8BFF417580CE4BD194870 /* Pods-BookWorm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookWorm.debug.xcconfig"; path = "Target Support Files/Pods-BookWorm/Pods-BookWorm.debug.xcconfig"; sourceTree = "<group>"; };
 		7F5AB5441B21E6F3283537AA /* Pods_BookWorm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookWorm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE20666525A5AD81009BCF4D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EE20666725A5F945009BCF4D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		EE454F272579F6AC004FC2C5 /* BookWorm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWorm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE454F2A2579F6AD004FC2C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE454F2C2579F6AD004FC2C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				EE454F352579F6AF004FC2C5 /* LaunchScreen.storyboard */,
 				EE454F382579F6AF004FC2C5 /* Info.plist */,
 				EE65708825876442007EEF86 /* GoogleService-Info.plist */,
+				EE20666525A5AD81009BCF4D /* User.swift */,
+				EE20666725A5F945009BCF4D /* Post.swift */,
 			);
 			path = BookWorm;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				EEC9719425A3E93D00A8A5E4 /* SearchViewController.swift in Sources */,
 				EEA31C352589BEF000CAF96C /* PostViewController.swift in Sources */,
 				EE454F2F2579F6AD004FC2C5 /* ViewController.swift in Sources */,
+				EE20666825A5F945009BCF4D /* Post.swift in Sources */,
 				EE454F2B2579F6AD004FC2C5 /* AppDelegate.swift in Sources */,
 				EED003D5257F2FF3002C51AC /* Utilities.swift in Sources */,
 				EE454F3F2579F711004FC2C5 /* SignUpViewController.swift in Sources */,
@@ -265,6 +272,7 @@
 				EE454F2D2579F6AD004FC2C5 /* SceneDelegate.swift in Sources */,
 				EEA31C302588FC0C00CAF96C /* ProfileViewController.swift in Sources */,
 				EE454F432579F747004FC2C5 /* HomeViewController.swift in Sources */,
+				EE20666625A5AD81009BCF4D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
