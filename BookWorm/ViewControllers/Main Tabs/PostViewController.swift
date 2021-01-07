@@ -16,13 +16,14 @@ class PostViewController: UIViewController
     
     @IBOutlet weak var bookAuthorTextField: UITextField!
     
-    @IBOutlet weak var blurbTextField: UITextField!
+    @IBOutlet weak var blurbTextField: UITextView!
     
     @IBOutlet weak var ratingSlider: UISlider!
 
-    @IBOutlet weak var reviewTextField: UITextField!
+    @IBOutlet weak var reviewTextField: UITextView!
     
     @IBOutlet weak var postButton: UIButton!
+    
     
     var currentPost = Post()
     
@@ -31,14 +32,23 @@ class PostViewController: UIViewController
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        
+       setUpElements()
     }
+    
+    func setUpElements()
+    {
+        Utilities.circularButton(button: postButton)
+        Utilities.roundedText(textView: blurbTextField)
+        Utilities.roundedText(textView: reviewTextField)
+    }
+    
+    
+    
     
     func createPost(post: Post)
     {
         let db = Firestore.firestore()
-        db.collection("messages").addDocument(data: [
+        db.collection("Test").addDocument(data: [
             //Need to add current user id
             "Title": post.getBookName(),
             "Author": post.getBookAuthor(),

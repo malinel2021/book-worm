@@ -6,58 +6,95 @@
 //  Copyright © 2020 Malin Leven. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+{
+    @IBOutlet var homeTableView: UITableView!
+    var allPosts = [Post]()
     
-    @IBOutlet weak var homeLabel: UILabel!
+    var tableView:UITableView!
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewDidLoad()
+        homeTableView.dataSource = self
+        homeTableView.delegate = self
+        
+        setUpElements()
+
+        view.addSubview(homeTableView)
+        homeTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        homeTableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
+        homeTableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        homeTableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        homeTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
+        
+        
+
+        
+        homeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "nameCell")
         
         //Setting up elements on the view
-        setUpElements()
     }
          
      
     func setUpElements()
     {
-        var allPosts = [String]()
-        var posts = ""
+        var tempPosts = [Post]()
         let db = Firestore.firestore()
-        db.collection("messages").getDocuments{ (QuerySnapshot, Error) in
+        db.collection("Test").getDocuments{ (QuerySnapshot, Error) in
             let err = Error
-            if err != nil{
+            if err != nil
+            {
                 print("Error getting documents: \(err)")
             }
             else
             {
-                for document in QuerySnapshot!.documents {
-                    posts = ("\(document.documentID) => \(document.data())")
-                    allPosts.append(posts)
+                for document in QuerySnapshot!.documents
+                {
+                    let title = document.get("Title")
+                    let author = document.get("Author")
+                    let blurb = document.get("Blurb")
+                    let rating = document.get("Rating")
+                    let review = document.get("Review")
+                    
+                    let post = Post(bookName: title as! String, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String)
+                    tempPosts.insert(post, at: 0)
                 }
-                self.homeLabel.text = allPosts.joined()
-//                print("Here is posts:", posts)
-//                print("Here is the all posts array:", allPosts)
+                self.allPosts = tempPosts
+                self.homeTableView.reloadData()
+                
+//                for post in self.allPosts
+//                {
+//                    print(post.getWholePost())
+//
+//                }
             }
-            
         }
-        
-
     }
-         
-        // Do any additional setup after loading the view.
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        allPosts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+          let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
+          cell.textLabel?.text = allPosts[indexPath.row].bookName
+          return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
+    
+        
 }

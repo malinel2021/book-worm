@@ -16,6 +16,11 @@ class Utilities
         button.layer.cornerRadius = 30.0
     }
     
+    static func roundedText(textView: UITextView)
+    {
+        textView.layer.cornerRadius = 10.0
+    }
+    
 /*
     Method to check password is valid
     Password must have at least:
