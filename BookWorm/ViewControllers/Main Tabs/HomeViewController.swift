@@ -12,33 +12,21 @@ import Firebase
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    @IBOutlet var homeTableView: UITableView!
+    @IBOutlet var table: UITableView!
+    
     var allPosts = [Post]()
     
-    var tableView:UITableView!
+    var currentUser: String!
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewDidLoad()
-        homeTableView.dataSource = self
-        homeTableView.delegate = self
-        
-        setUpElements()
-
-        view.addSubview(homeTableView)
-        homeTableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        homeTableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
-        homeTableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
-        homeTableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
-        homeTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
-        
-        
-
-        
-        homeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "nameCell")
+        table.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
+        table.delegate = self
+        table.dataSource = self
         
         //Setting up elements on the view
+        setUpElements()        
     }
          
      
@@ -46,7 +34,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         var tempPosts = [Post]()
         let db = Firestore.firestore()
-        db.collection("Test").getDocuments{ (QuerySnapshot, Error) in
+        db.collection("Test2").getDocuments{ (QuerySnapshot, Error) in
             let err = Error
             if err != nil
             {
@@ -57,22 +45,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 for document in QuerySnapshot!.documents
                 {
                     let title = document.get("Title")
+                    let postAuthor = document.get("Post Author")
                     let author = document.get("Author")
                     let blurb = document.get("Blurb")
                     let rating = document.get("Rating")
                     let review = document.get("Review")
+                    let time = document.get("Date")
                     
-                    let post = Post(bookName: title as! String, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String)
+                    let post = Post(bookName: title as! String, postAuthor: postAuthor as! String, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String, timeStamp: time as! FieldValue)
+                    
                     tempPosts.insert(post, at: 0)
                 }
                 self.allPosts = tempPosts
-                self.homeTableView.reloadData()
-                
-//                for post in self.allPosts
-//                {
-//                    print(post.getWholePost())
-//
-//                }
+                self.table.reloadData()
             }
         }
     }
@@ -86,15 +71,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
-          cell.textLabel?.text = allPosts[indexPath.row].bookName
-          return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
+        cell.configure(with: allPosts[indexPath.row])
+        return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
-    }
-    
-    
-        
 }

@@ -11,7 +11,8 @@ import Firebase
 
 class PostViewController: UIViewController
 {
-
+    var postAuthorUsername: String = ""
+    
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var bookAuthorTextField: UITextField!
@@ -24,15 +25,15 @@ class PostViewController: UIViewController
     
     @IBOutlet weak var postButton: UIButton!
     
-    
     var currentPost = Post()
+    
+    var timeStamp: FieldValue!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-       setUpElements()
+
+        setUpElements()
     }
     
     func setUpElements()
@@ -42,29 +43,26 @@ class PostViewController: UIViewController
         Utilities.roundedText(textView: reviewTextField)
     }
     
-    
-    
-    
     func createPost(post: Post)
     {
+        timeStamp = FieldValue.serverTimestamp()
         let db = Firestore.firestore()
-        db.collection("Test").addDocument(data: [
+        db.collection("Test2").addDocument(data: [
             //Need to add current user id
+            "Post Author": post.getPostAuthor(),
             "Title": post.getBookName(),
             "Author": post.getBookAuthor(),
             "Blurb": post.getBlurb(),
             "Rating": post.getRatingNumber(),
-            "Review": post.getReviewString()
+            "Review": post.getReviewString(),
+            "Date": timeStamp as FieldValue
         ])
-        
     }
     
     @IBAction func sliderChanged(_ sender: UISlider)
     {
         sender.value = roundf(sender.value);
     }
-    
-    
 
     @IBAction func postButtonTapped(_ sender: Any)
     {
@@ -75,27 +73,13 @@ class PostViewController: UIViewController
     func getTextFieldValues()
     {
         let title = titleTextField.text!
+        let postAuthor = postAuthorUsername
         let author = bookAuthorTextField.text!
         let blurb = blurbTextField.text!
         let rating = Int(ratingSlider.value)
         let review = reviewTextField.text!
+        let timeStamp = Utilities
 
-        
-        currentPost = Post(bookName: title, bookAuthor: author, blurb: blurb, rating: rating, reviewString: review)
+        currentPost = Post(bookName: title, postAuthor: postAuthor, bookAuthor: author, blurb: blurb, rating: rating, reviewString: review, timeStamp: timeStamp)
     }
-    
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -7,34 +7,43 @@
 //
 
 import Foundation
+import Firebase
 
 class Post
 {
-    var bookName = ""
-    var postAuthor = User()
-    var bookAuthor = ""
-    var blurb = ""
-    var ratingNumber = 0
-    var reviewString = ""
+    var bookName: String!
+    var postAuthor: String!
+    var bookAuthor: String!
+    var blurb: String!
+    var ratingNumber: Int!
+    var reviewString: String!
+    var timeStamp: FieldValue?
+//    var bookImageName = ""
+//    var ratingImageName = ""
     
     init()
     {
         self.bookName = ""
-        self.postAuthor = User()
+        self.postAuthor = ""
         self.bookAuthor = ""
         self.blurb = ""
         self.ratingNumber = 0
         self.reviewString = ""
+        self.timeStamp = nil
+//        self.bookImageName = ""
+//        self.ratingImageName = ""
     }
     
     
-    init(bookName: String, bookAuthor: String, blurb: String, rating: Int, reviewString: String)
+    init(bookName: String, postAuthor: String, bookAuthor: String, blurb: String, rating: Int, reviewString: String, timeStamp: FieldValue?)
     {
         self.bookName = bookName
+        self.postAuthor = postAuthor
         self.bookAuthor = bookAuthor
         self.blurb = blurb
         self.ratingNumber = rating
         self.reviewString = reviewString
+        self.timeStamp = timeStamp
     }
     
     //Setters
@@ -43,7 +52,8 @@ class Post
         self.bookName = name
     }
     
-    func setPostAuthor(user: User)
+    
+    func setPostAuthor(user: String)
     {
         self.postAuthor = user
     }
@@ -74,10 +84,11 @@ class Post
         return bookName
     }
     
-    func getPostAuthor () -> User
+    func getPostAuthor () -> String
     {
         return postAuthor
     }
+    
     
     func getBookAuthor () -> String
     {
@@ -97,12 +108,6 @@ class Post
     func getReviewString () -> String
     {
         return reviewString
-    }
-    
-    func getWholePost() -> String
-    {
-        let ratingString = String(ratingNumber)
-        return bookName + bookAuthor + blurb + ratingString + reviewString
     }
 }
 

@@ -1,17 +1,21 @@
 //
-//  ProfileViewController.swift
+//  TabBarController.swift
 //  BookWorm
 //
-//  Created by Malin Leven on 15/12/2020.
-//  Copyright © 2020 Malin Leven. All rights reserved.
+//  Created by Malin Leven on 10/1/2021.
+//  Copyright © 2021 Malin Leven. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
-    override func viewDidLoad() {
+class TabBarController: UITabBarController
+{
+    var currentUser: String!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+//        print("From tab bar " + currentUser)
 
         // Do any additional setup after loading the view.
     }

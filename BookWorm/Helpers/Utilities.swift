@@ -21,6 +21,18 @@ class Utilities
         textView.layer.cornerRadius = 10.0
     }
     
+    //https://stackoverflow.com/questions/52367721/how-to-declare-data-type-as-timestamp-in-ios-swift
+    static func convert(timestamp: Double, toDateFormat dateFormat: String) -> String
+    {
+        let date = Date(timeIntervalSince1970: timestamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = NSTimeZone.local
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.string(from: date)
+    }
+    
+    
 /*
     Method to check password is valid
     Password must have at least:

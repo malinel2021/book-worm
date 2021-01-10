@@ -11,9 +11,12 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController
+{
     
-    private var myBool:Bool = false
+    var myBool:Bool = false
+    
+    var currentUser: User!
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -25,7 +28,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
                 
         //Setting up elements on the view
@@ -36,6 +40,7 @@ class SignUpViewController: UIViewController {
     {
         //Hiding the error label
         errorLabel.alpha = 0
+        Utilities.circularButton(button: signUpButton)
     }
     
     //Function to check if log in button should perform segue to home screen
@@ -125,22 +130,25 @@ class SignUpViewController: UIViewController {
                 }
             }
             //Performing segue
+            self.currentUser = User(username: email)
             self.performSegue(withIdentifier: "segue2", sender: (Any).self)
-            let currentUser = User(username: username)
         }
     }
     
-//    @IBAction func backButtonTapped(_ sender: Any) {
-//        transitionToMain()
-//    }
+    //Sending information to the post view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let barViewControllers = segue.destination as? UITabBarController
+        {
+            let destinationViewController = barViewControllers.viewControllers?[2] as! PostViewController
+            destinationViewController.postAuthorUsername = currentUser.getUsername()
+        }
+    }
     
-    
+    //Function to show error
     func showError(  message: String)
     {
         errorLabel.text = message
         errorLabel.alpha = 1
-        
     }
-
-
 }

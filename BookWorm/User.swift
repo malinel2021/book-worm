@@ -18,10 +18,14 @@ class User
         username = ""
     }
     
-    
     init(username: String)
     {
         self.username = username
+    }
+    
+    func getUsername() -> String
+    {
+        return username
     }
 }
 

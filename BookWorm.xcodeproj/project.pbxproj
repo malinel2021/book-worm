@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		65EE10A52A9F6B28B3EF3532 /* Pods_BookWorm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5AB5441B21E6F3283537AA /* Pods_BookWorm.framework */; };
+		EE1C7C8325A9A63800ED32CA /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C7C8125A9A63800ED32CA /* PostTableViewCell.swift */; };
+		EE1C7C8425A9A63800ED32CA /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1C7C8225A9A63800ED32CA /* PostTableViewCell.xib */; };
 		EE20666625A5AD81009BCF4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20666525A5AD81009BCF4D /* User.swift */; };
 		EE20666825A5F945009BCF4D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20666725A5F945009BCF4D /* Post.swift */; };
 		EE454F2B2579F6AD004FC2C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE454F2A2579F6AD004FC2C5 /* AppDelegate.swift */; };
@@ -20,9 +22,10 @@
 		EE454F432579F747004FC2C5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE454F422579F747004FC2C5 /* HomeViewController.swift */; };
 		EE46219D2587915000E7DCA4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46219C2587915000E7DCA4 /* Constants.swift */; };
 		EE65708925876442007EEF86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE65708825876442007EEF86 /* GoogleService-Info.plist */; };
-		EEA31C302588FC0C00CAF96C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA31C2F2588FC0C00CAF96C /* ProfileViewController.swift */; };
 		EEA31C352589BEF000CAF96C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA31C342589BEF000CAF96C /* PostViewController.swift */; };
-		EEC7CD5625A76A1700A3BC2E /* postCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC7CD5525A76A1600A3BC2E /* postCellViewController.swift */; };
+		EEC0895225AB034100982548 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC0895025AB034000982548 /* ProfileTableViewCell.swift */; };
+		EEC0895325AB034100982548 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC0895125AB034000982548 /* ProfileTableViewCell.xib */; };
+		EEC0895725AB0E8300982548 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC0895625AB0E8300982548 /* MyProfileViewController.swift */; };
 		EEC9719425A3E93D00A8A5E4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC9719325A3E93D00A8A5E4 /* SearchViewController.swift */; };
 		EED003D5257F2FF3002C51AC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED003D4257F2FF3002C51AC /* Utilities.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +34,8 @@
 		3B7EDE236882487C20C11D06 /* Pods-BookWorm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookWorm.release.xcconfig"; path = "Target Support Files/Pods-BookWorm/Pods-BookWorm.release.xcconfig"; sourceTree = "<group>"; };
 		69B8BFF417580CE4BD194870 /* Pods-BookWorm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookWorm.debug.xcconfig"; path = "Target Support Files/Pods-BookWorm/Pods-BookWorm.debug.xcconfig"; sourceTree = "<group>"; };
 		7F5AB5441B21E6F3283537AA /* Pods_BookWorm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookWorm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE1C7C8125A9A63800ED32CA /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		EE1C7C8225A9A63800ED32CA /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		EE20666525A5AD81009BCF4D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EE20666725A5F945009BCF4D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		EE454F272579F6AC004FC2C5 /* BookWorm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWorm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,9 +50,10 @@
 		EE454F422579F747004FC2C5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EE46219C2587915000E7DCA4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EE65708825876442007EEF86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EEA31C2F2588FC0C00CAF96C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EEA31C342589BEF000CAF96C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		EEC7CD5525A76A1600A3BC2E /* postCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCellViewController.swift; sourceTree = "<group>"; };
+		EEC0895025AB034000982548 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		EEC0895125AB034000982548 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		EEC0895625AB0E8300982548 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		EEC9719325A3E93D00A8A5E4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EED003D4257F2FF3002C51AC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +119,10 @@
 				EE65708825876442007EEF86 /* GoogleService-Info.plist */,
 				EE20666525A5AD81009BCF4D /* User.swift */,
 				EE20666725A5F945009BCF4D /* Post.swift */,
-				EEC7CD5525A76A1600A3BC2E /* postCellViewController.swift */,
+				EE1C7C8125A9A63800ED32CA /* PostTableViewCell.swift */,
+				EE1C7C8225A9A63800ED32CA /* PostTableViewCell.xib */,
+				EEC0895025AB034000982548 /* ProfileTableViewCell.swift */,
+				EEC0895125AB034000982548 /* ProfileTableViewCell.xib */,
 			);
 			path = BookWorm;
 			sourceTree = "<group>";
@@ -142,8 +151,8 @@
 			children = (
 				EE454F422579F747004FC2C5 /* HomeViewController.swift */,
 				EEC9719325A3E93D00A8A5E4 /* SearchViewController.swift */,
-				EEA31C2F2588FC0C00CAF96C /* ProfileViewController.swift */,
 				EEA31C342589BEF000CAF96C /* PostViewController.swift */,
+				EEC0895625AB0E8300982548 /* MyProfileViewController.swift */,
 			);
 			path = "Main Tabs";
 			sourceTree = "<group>";
@@ -209,9 +218,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE454F372579F6AF004FC2C5 /* LaunchScreen.storyboard in Resources */,
+				EE1C7C8425A9A63800ED32CA /* PostTableViewCell.xib in Resources */,
 				EE65708925876442007EEF86 /* GoogleService-Info.plist in Resources */,
 				EE454F342579F6AF004FC2C5 /* Assets.xcassets in Resources */,
 				EE454F322579F6AD004FC2C5 /* Main.storyboard in Resources */,
+				EEC0895325AB034100982548 /* ProfileTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEC9719425A3E93D00A8A5E4 /* SearchViewController.swift in Sources */,
+				EEC0895225AB034100982548 /* ProfileTableViewCell.swift in Sources */,
+				EEC0895725AB0E8300982548 /* MyProfileViewController.swift in Sources */,
 				EEA31C352589BEF000CAF96C /* PostViewController.swift in Sources */,
+				EE1C7C8325A9A63800ED32CA /* PostTableViewCell.swift in Sources */,
 				EE454F2F2579F6AD004FC2C5 /* ViewController.swift in Sources */,
 				EE20666825A5F945009BCF4D /* Post.swift in Sources */,
 				EE454F2B2579F6AD004FC2C5 /* AppDelegate.swift in Sources */,
@@ -273,8 +287,6 @@
 				EE454F3F2579F711004FC2C5 /* SignUpViewController.swift in Sources */,
 				EE46219D2587915000E7DCA4 /* Constants.swift in Sources */,
 				EE454F2D2579F6AD004FC2C5 /* SceneDelegate.swift in Sources */,
-				EEA31C302588FC0C00CAF96C /* ProfileViewController.swift in Sources */,
-				EEC7CD5625A76A1700A3BC2E /* postCellViewController.swift in Sources */,
 				EE454F432579F747004FC2C5 /* HomeViewController.swift in Sources */,
 				EE20666625A5AD81009BCF4D /* User.swift in Sources */,
 			);

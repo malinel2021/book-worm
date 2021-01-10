@@ -12,6 +12,8 @@ import FirebaseAuth
 class ViewController: UIViewController
 {
     private var myBool:Bool = false
+    
+    var currentUser: User!
         
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -27,7 +29,6 @@ class ViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpElements()
-        
     }
     
     func setUpElements()
@@ -60,8 +61,7 @@ class ViewController: UIViewController
     {
         //Create cleaned versions of the text fields
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)        
         
         //Signing in the user
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -77,8 +77,24 @@ class ViewController: UIViewController
             else
             {
                 //Performing segue
+                self.currentUser = User(username: email)
                 self.performSegue(withIdentifier: "segue1", sender: (Any).self)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let barViewControllers = segue.destination as? UITabBarController
+        {
+            let destinationViewController = barViewControllers.viewControllers?[2] as! PostViewController
+            destinationViewController.postAuthorUsername = currentUser.getUsername()
+        }
+        
+        if let barViewControllers = segue.destination as? UITabBarController
+        {
+            let destinationViewController = barViewControllers.viewControllers?[3] as! MyProfileViewController
+            destinationViewController.currentUser = currentUser.getUsername()
         }
     }
 
