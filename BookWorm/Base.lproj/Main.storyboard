@@ -127,7 +127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="foT-Gu-GVL">
-                                <rect key="frame" x="10" y="98" width="394" height="705"/>
+                                <rect key="frame" x="10" y="54" width="394" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -150,12 +150,11 @@
             </objects>
             <point key="canvasLocation" x="3309" y="244"/>
         </scene>
-        <!--tabs-->
+        <!--Tabs-->
         <scene sceneID="fvq-Mm-Rtv">
             <objects>
-                <tabBarController title="tabs" id="R0u-fh-ID8" customClass="TabBarController" customModule="BookWorm" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Book Worm" id="fai-Ig-PRy"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                <tabBarController title="Tabs" id="R0u-fh-ID8" customClass="TabBarController" customModule="BookWorm" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ps-ki-7zT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -226,7 +225,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="E5h-BI-d9j">
-                                <rect key="frame" x="40" y="171" width="334" height="554"/>
+                                <rect key="frame" x="40" y="176" width="334" height="544"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-Xv-RjA">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="35"/>
@@ -255,7 +254,7 @@
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="luY-YY-XQA">
                                         <rect key="frame" x="0.0" y="129" width="334" height="110"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.63921568630000003" green="0.83137254900000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="u8l-a4-ruq"/>
                                         </constraints>
@@ -272,18 +271,19 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2.5" minValue="1" maxValue="5" minimumValueImage="1.circle.fill" catalog="system" maximumValueImage="5.circle.fill" translatesAutoresizingMaskIntoConstraints="NO" id="q3L-Ce-7bM">
-                                        <rect key="frame" x="-2" y="285" width="338" height="41"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" minimumValueImage="1.circle.fill" catalog="system" maximumValueImage="5.circle.fill" translatesAutoresizingMaskIntoConstraints="NO" id="q3L-Ce-7bM">
+                                        <rect key="frame" x="-2" y="285" width="338" height="31"/>
+                                        <color key="tintColor" red="0.76918246268015822" green="0.6433673792195812" blue="0.22518378258416499" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="qMG-uM-9HM"/>
+                                            <constraint firstAttribute="height" constant="30" id="qMG-uM-9HM"/>
                                         </constraints>
-                                        <color key="minimumTrackTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="lwe-pk-Owp" eventType="valueChanged" id="PWS-JS-Qtk"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-Mh-cok">
-                                        <rect key="frame" x="0.0" y="338" width="334" height="20"/>
+                                        <rect key="frame" x="0.0" y="328" width="334" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="yTm-Ih-3zb"/>
                                         </constraints>
@@ -292,8 +292,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F2C-k1-ELP">
-                                        <rect key="frame" x="0.0" y="371" width="334" height="110"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="0.0" y="361" width="334" height="110"/>
+                                        <color key="backgroundColor" red="0.63921568630000003" green="0.83137254900000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="Wfh-JP-JBg"/>
                                         </constraints>
@@ -302,13 +302,15 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJR-VP-pOg">
-                                        <rect key="frame" x="0.0" y="494" width="334" height="60"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="484" width="334" height="60"/>
+                                        <color key="backgroundColor" red="0.14296357379999999" green="0.22891264189999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="ich-z1-cM3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Send it!"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Publish Post!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="postButtonTapped:" destination="lwe-pk-Owp" eventType="touchUpInside" id="7Mx-Wb-dcR"/>
                                         </connections>
@@ -443,7 +445,7 @@
                     <navigationItem key="navigationItem" id="hES-QN-mXc"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="T1r-s2-U7U">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T1r-s2-U7U">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

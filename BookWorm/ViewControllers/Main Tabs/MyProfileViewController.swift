@@ -29,6 +29,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
         table.delegate = self
         table.dataSource = self
 
+        //Setting up elements on the view
         setUpElements()
     }
     
@@ -54,10 +55,8 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
                         let blurb = document.get("Blurb")
                         let rating = document.get("Rating")
                         let review = document.get("Review")
-                        let time = document.get("Date")
                         
-                        let post = Post(bookName: title as! String, postAuthor: postAuthor , bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String, timeStamp: time as! FieldValue)
-
+                        let post = Post(bookName: title as! String, postAuthor: postAuthor , bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String)
                         
                         tempPosts.insert(post, at: 0)
                     }

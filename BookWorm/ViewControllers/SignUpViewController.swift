@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController
         super.viewDidLoad()
                 
         //Setting up elements on the view
-            setUpElements()
+        setUpElements()
     }
     
     func setUpElements()

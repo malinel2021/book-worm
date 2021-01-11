@@ -26,13 +26,12 @@ class PostViewController: UIViewController
     @IBOutlet weak var postButton: UIButton!
     
     var currentPost = Post()
-    
-    var timeStamp: FieldValue!
-    
+        
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
+        //Setting up elements on the view
         setUpElements()
     }
     
@@ -45,7 +44,6 @@ class PostViewController: UIViewController
     
     func createPost(post: Post)
     {
-        timeStamp = FieldValue.serverTimestamp()
         let db = Firestore.firestore()
         db.collection("Test2").addDocument(data: [
             //Need to add current user id
@@ -55,7 +53,6 @@ class PostViewController: UIViewController
             "Blurb": post.getBlurb(),
             "Rating": post.getRatingNumber(),
             "Review": post.getReviewString(),
-            "Date": timeStamp as FieldValue
         ])
     }
     
@@ -68,6 +65,16 @@ class PostViewController: UIViewController
     {
         getTextFieldValues()
         createPost(post: currentPost)
+        clearTextFields()
+    }
+    
+    func clearTextFields()
+    {
+        titleTextField.text = ""
+        bookAuthorTextField.text = ""
+        blurbTextField.text = ""
+        reviewTextField.text = ""
+        ratingSlider.value = 3
     }
     
     func getTextFieldValues()
@@ -78,8 +85,7 @@ class PostViewController: UIViewController
         let blurb = blurbTextField.text!
         let rating = Int(ratingSlider.value)
         let review = reviewTextField.text!
-        let timeStamp = Utilities
 
-        currentPost = Post(bookName: title, postAuthor: postAuthor, bookAuthor: author, blurb: blurb, rating: rating, reviewString: review, timeStamp: timeStamp)
+        currentPost = Post(bookName: title, postAuthor: postAuthor, bookAuthor: author, blurb: blurb, rating: rating, reviewString: review)
     }
 }

@@ -14,13 +14,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 {
     @IBOutlet var table: UITableView!
     
+    //Array to hold all the posts from Firestore
     var allPosts = [Post]()
     
+    //Username of current user signed in. This String is sent by the sign up or the log in view controllers
+    //using the segue
     var currentUser: String!
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewDidLoad()
+        
+        //Setting up the table with the type of table cell it will be using
         table.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
@@ -32,9 +37,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
      
     func setUpElements()
     {
+        //Creating a temporary Array variable to hold posts
         var tempPosts = [Post]()
+       
+        //Getting the Firestore database documents
         let db = Firestore.firestore()
-        db.collection("Test2").getDocuments{ (QuerySnapshot, Error) in
+        db.collection("Test2").getDocuments { (QuerySnapshot, Error) in
+            //Checking for errors
             let err = Error
             if err != nil
             {
@@ -42,6 +51,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             else
             {
+                //For loop to get data for each post and create a Post instance with the data
                 for document in QuerySnapshot!.documents
                 {
                     let title = document.get("Title")
@@ -50,12 +60,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     let blurb = document.get("Blurb")
                     let rating = document.get("Rating")
                     let review = document.get("Review")
-                    let time = document.get("Date")
-                    
-                    let post = Post(bookName: title as! String, postAuthor: postAuthor as! String, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String, timeStamp: time as! FieldValue)
-                    
+                    let post = Post(bookName: title as! String, postAuthor: postAuthor as! String, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String)
+                
+                    //Adding each post to the temporary Array
                     tempPosts.insert(post, at: 0)
                 }
+                //Setting the
                 self.allPosts = tempPosts
                 self.table.reloadData()
             }
