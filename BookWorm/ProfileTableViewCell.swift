@@ -37,10 +37,10 @@ class ProfileTableViewCell: UITableViewCell
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        // Initialization code
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.systemPink.cgColor
-               
+        
+        //Formatting table
+        Utilities.formatTable(tableView: self)
+        self.layer.borderColor = UIColor.blue.cgColor
     }
     
     func configure(with model: Post)

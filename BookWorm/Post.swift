@@ -84,11 +84,15 @@ class Post
         return bookName
     }
     
+    func getBookNameAndAuthor () -> String
+    {
+        return bookName + " by " + bookAuthor
+    }
+    
     func getPostAuthor () -> String
     {
         return postAuthor
     }
-    
     
     func getBookAuthor () -> String
     {

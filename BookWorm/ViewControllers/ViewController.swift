@@ -88,16 +88,9 @@ class ViewController: UIViewController
     {
         if let barViewControllers = segue.destination as? UITabBarController
         {
-            let destinationViewController = barViewControllers.viewControllers?[2] as! PostViewController
-            destinationViewController.postAuthorUsername = currentUser.getUsername()
-        }
-        
-        if let barViewControllers = segue.destination as? UITabBarController
-        {
             let destinationViewController = barViewControllers.viewControllers?[3] as! MyProfileViewController
             destinationViewController.currentUser = currentUser.getUsername()
         }
     }
-
 }
 

@@ -37,12 +37,13 @@ class PostTableViewCell: UITableViewCell
     }
     
     
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
-        // Initialization code
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.purple.cgColor
-               
+        
+        //Formatting table
+        Utilities.formatTable(tableView: self)
+        self.layer.borderColor = UIColor.systemTeal.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool)

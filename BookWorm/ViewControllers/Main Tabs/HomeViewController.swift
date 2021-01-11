@@ -63,10 +63,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     let time = document.get("Date")
                     let post = Post(bookName: title as! String, postAuthor: postAuthor as! String, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String, timeString: time as! String)
 
-                    //Adding each post to the temporary Array
-                    tempPosts.insert(post, at: 0)
+                    //Adding each post to the temporary Array, sorting by time with the newest post at the top
+                    tempPosts.append(post)
+                    tempPosts = tempPosts.sorted { $0.timeString > $1.timeString }
                 }
-                //Setting the
+                //Setting the array for the table and reloading
                 self.allPosts = tempPosts
                 self.table.reloadData()
             }
@@ -77,8 +78,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        allPosts.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return allPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -20,11 +20,11 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
     
     var currentUser: String!
 
-    override func viewDidLoad()
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewDidLoad()
         let userShort = currentUser.components(separatedBy: CharacterSet(charactersIn: ("@"))).first
-        username.text = userShort! + "'s Book Reviews"
+        username.text = "@" + userShort!
         table.register(ProfileTableViewCell.nib(), forCellReuseIdentifier: ProfileTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
@@ -59,9 +59,12 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
                                                 
                         let post = Post(bookName: title as! String, postAuthor: postAuthor, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String, timeString: time as! String)
                         
-                        tempPosts.insert(post, at: 0)
+                        //Adding each post to the temporary Array, sorting by time with the newest post at the top
+                        tempPosts.append(post)
+                        tempPosts = tempPosts.sorted { $0.timeString > $1.timeString }
                     }
                 }
+                //Setting the array for the table and reloading
                 self.userPosts = tempPosts
                 self.table.reloadData()
             }
@@ -75,7 +78,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        userPosts.count
+        return userPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
