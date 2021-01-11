@@ -70,8 +70,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Worm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoD-8b-K37">
-                                <rect key="frame" x="49" y="120" width="316" height="72"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BookWorm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoD-8b-K37">
+                                <rect key="frame" x="55" y="120" width="304" height="72"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
                                 <color key="textColor" red="0.63921568630000003" green="0.83137254900000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -486,6 +486,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="zMK-fR-Fgu"/>
         <segue reference="Sg5-0d-Cev"/>
         <segue reference="hYb-wH-m9p"/>
     </inferredMetricsTieBreakers>
