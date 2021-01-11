@@ -72,6 +72,7 @@ class PostTableViewCell: UITableViewCell
         }
         self.blurbLabel.text = model.blurb
         self.reviewLabel.text = model.reviewString
+        self.timeStamp.text = model.timeString
     }
     
 }

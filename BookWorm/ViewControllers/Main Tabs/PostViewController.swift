@@ -45,7 +45,7 @@ class PostViewController: UIViewController
     func createPost(post: Post)
     {
         let db = Firestore.firestore()
-        db.collection("Test2").addDocument(data: [
+        db.collection("Test3").addDocument(data: [
             //Need to add current user id
             "Post Author": post.getPostAuthor(),
             "Title": post.getBookName(),
@@ -53,6 +53,7 @@ class PostViewController: UIViewController
             "Blurb": post.getBlurb(),
             "Rating": post.getRatingNumber(),
             "Review": post.getReviewString(),
+            "Date": Utilities.getTimeString()
         ])
     }
     
@@ -85,7 +86,7 @@ class PostViewController: UIViewController
         let blurb = blurbTextField.text!
         let rating = Int(ratingSlider.value)
         let review = reviewTextField.text!
-
-        currentPost = Post(bookName: title, postAuthor: postAuthor, bookAuthor: author, blurb: blurb, rating: rating, reviewString: review)
+        let time = Utilities.getTimeString()
+        currentPost = Post(bookName: title, postAuthor: postAuthor, bookAuthor: author, blurb: blurb, rating: rating, reviewString: review, timeString: time)
     }
 }

@@ -11,27 +11,27 @@ import UIKit
 
 class Utilities
 {
+    //Function to format a circular button
     static func circularButton(button: UIButton)
     {
         button.layer.cornerRadius = 30.0
     }
     
+    //Function to format rounded text views
     static func roundedText(textView: UITextView)
     {
         textView.layer.cornerRadius = 10.0
     }
     
-    //https://stackoverflow.com/questions/52367721/how-to-declare-data-type-as-timestamp-in-ios-swift
-    static func convert(timestamp: Double, toDateFormat dateFormat: String) -> String
+    //Format to get the current time as a string
+    static func getTimeString() -> String
     {
-        let date = Date(timeIntervalSince1970: timestamp)
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = NSTimeZone.local
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = dateFormat
-        return dateFormatter.string(from: date)
+        let currentDate = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let now = df.string(from:currentDate)
+        return now
     }
-    
     
 /*
     Method to check password is valid

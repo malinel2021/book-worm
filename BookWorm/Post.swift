@@ -17,6 +17,7 @@ class Post
     var blurb: String!
     var ratingNumber: Int!
     var reviewString: String!
+    var timeString: String!
 //    var bookImageName = ""
 //    var ratingImageName = ""
     
@@ -28,12 +29,13 @@ class Post
         self.blurb = ""
         self.ratingNumber = 0
         self.reviewString = ""
+        self.timeString = ""
 //        self.bookImageName = ""
 //        self.ratingImageName = ""
     }
     
     
-    init(bookName: String, postAuthor: String, bookAuthor: String, blurb: String, rating: Int, reviewString: String)
+    init(bookName: String, postAuthor: String, bookAuthor: String, blurb: String, rating: Int, reviewString: String, timeString: String)
     {
         self.bookName = bookName
         self.postAuthor = postAuthor
@@ -41,6 +43,7 @@ class Post
         self.blurb = blurb
         self.ratingNumber = rating
         self.reviewString = reviewString
+        self.timeString = timeString
     }
     
     //Setters

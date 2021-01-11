@@ -37,7 +37,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
     {
         var tempPosts = [Post]()
         let db = Firestore.firestore()
-        db.collection("Test2").getDocuments{ (QuerySnapshot, Error) in
+        db.collection("Test3").getDocuments{ (QuerySnapshot, Error) in
             let err = Error
             if err != nil
             {
@@ -55,8 +55,9 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
                         let blurb = document.get("Blurb")
                         let rating = document.get("Rating")
                         let review = document.get("Review")
-                        
-                        let post = Post(bookName: title as! String, postAuthor: postAuthor , bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String)
+                        let time = document.get("Date")
+                                                
+                        let post = Post(bookName: title as! String, postAuthor: postAuthor, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String, timeString: time as! String)
                         
                         tempPosts.insert(post, at: 0)
                     }

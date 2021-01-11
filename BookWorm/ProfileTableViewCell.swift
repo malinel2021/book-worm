@@ -18,7 +18,8 @@ class ProfileTableViewCell: UITableViewCell
     @IBOutlet var blurbLabel: UILabel!
 
     @IBOutlet var reviewLabel: UILabel!
-
+    
+    @IBOutlet var timeStamp: UILabel!
 
     override func setSelected(_ selected: Bool, animated: Bool)
     {
@@ -63,5 +64,6 @@ class ProfileTableViewCell: UITableViewCell
         }
         self.blurbLabel.text = model.blurb
         self.reviewLabel.text = model.reviewString
+        self.timeStamp.text = model.timeString
     }
 }
