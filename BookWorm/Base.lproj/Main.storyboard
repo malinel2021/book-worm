@@ -387,10 +387,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8x6-4Y-FPD">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAJ-cR-vEr">
                                         <rect key="frame" x="0.0" y="60" width="334" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="NBt-kL-MHd"/>
+                                            <constraint firstAttribute="height" constant="40" id="Oyb-Tn-n9M"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -454,7 +454,7 @@
                         <outlet property="errorLabel" destination="wgo-D1-J9S" id="FGz-JI-Xib"/>
                         <outlet property="passwordTextField" destination="rJa-si-ESd" id="f6g-Vs-hkk"/>
                         <outlet property="signUpButton" destination="FcU-rN-94e" id="lS5-9c-INR"/>
-                        <outlet property="usernameTextField" destination="8x6-4Y-FPD" id="AeI-WI-DrA"/>
+                        <outlet property="usernameTextField" destination="PAJ-cR-vEr" id="HG2-zd-aa4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7j1-YM-kmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -486,8 +486,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zMK-fR-Fgu"/>
-        <segue reference="Sg5-0d-Cev"/>
+        <segue reference="0Jg-aE-MFP"/>
         <segue reference="hYb-wH-m9p"/>
     </inferredMetricsTieBreakers>
     <resources>

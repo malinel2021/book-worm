@@ -16,7 +16,7 @@ class ViewController: UIViewController
     var currentUser: User!
         
     @IBOutlet weak var emailTextField: UITextField!
-    
+        
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var errorLabel: UILabel!
@@ -25,7 +25,8 @@ class ViewController: UIViewController
     
     @IBOutlet weak var signUpButton: UIButton!
         
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         //Setting up elements on the view
@@ -90,6 +91,11 @@ class ViewController: UIViewController
         {
             let destinationViewController = barViewControllers.viewControllers?[3] as! MyProfileViewController
             destinationViewController.currentUser = currentUser.getUsername()
+        }
+        if let barViewControllers = segue.destination as? UITabBarController
+        {
+            let destinationViewController = barViewControllers.viewControllers?[2] as! PostViewController
+            destinationViewController.postAuthorUsername = currentUser.getUsername()
         }
     }
 }

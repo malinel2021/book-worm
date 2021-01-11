@@ -59,7 +59,6 @@ class SignUpViewController: UIViewController
         return true
     }
 
-    
     /*  Check the text fields and validate that the data is correct. If
         everything is correct it will return nil, if not it will display
         the error message
@@ -142,6 +141,11 @@ class SignUpViewController: UIViewController
         {
             let destinationViewController = barViewControllers.viewControllers?[3] as! MyProfileViewController
             destinationViewController.currentUser = currentUser.getUsername()
+        }
+        if let barViewControllers = segue.destination as? UITabBarController
+        {
+            let destinationViewController = barViewControllers.viewControllers?[2] as! PostViewController
+            destinationViewController.postAuthorUsername = currentUser.getUsername()
         }
     }
     

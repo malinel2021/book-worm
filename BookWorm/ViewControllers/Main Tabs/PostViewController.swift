@@ -45,7 +45,7 @@ class PostViewController: UIViewController
     func createPost(post: Post)
     {
         let db = Firestore.firestore()
-        db.collection("Test3").addDocument(data: [
+        db.collection("Posts").addDocument(data: [
             //Need to add current user id
             "Post Author": post.getPostAuthor(),
             "Title": post.getBookName(),

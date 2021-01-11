@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
        
         //Getting the Firestore database documents
         let db = Firestore.firestore()
-        db.collection("Test3").getDocuments { (QuerySnapshot, Error) in
+        db.collection("Posts").getDocuments { (QuerySnapshot, Error) in
             //Checking for errors
             let err = Error
             if err != nil

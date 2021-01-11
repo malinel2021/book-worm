@@ -37,7 +37,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
     {
         var tempPosts = [Post]()
         let db = Firestore.firestore()
-        db.collection("Test3").getDocuments{ (QuerySnapshot, Error) in
+        db.collection("Posts").getDocuments{ (QuerySnapshot, Error) in
             let err = Error
             if err != nil
             {
