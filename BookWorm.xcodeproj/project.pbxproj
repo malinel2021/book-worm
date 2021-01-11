@@ -110,8 +110,9 @@
 			children = (
 				EE454F2A2579F6AD004FC2C5 /* AppDelegate.swift */,
 				EE454F2C2579F6AD004FC2C5 /* SceneDelegate.swift */,
-				EE46219E2587915800E7DCA4 /* Helpers */,
 				EE454F442579F74D004FC2C5 /* ViewControllers */,
+				EE46219E2587915800E7DCA4 /* Helpers */,
+				EE60E28525AC6235005CB7F8 /* TableView Helpers */,
 				EE454F302579F6AD004FC2C5 /* Main.storyboard */,
 				EE454F332579F6AF004FC2C5 /* Assets.xcassets */,
 				EE454F352579F6AF004FC2C5 /* LaunchScreen.storyboard */,
@@ -119,10 +120,6 @@
 				EE65708825876442007EEF86 /* GoogleService-Info.plist */,
 				EE20666525A5AD81009BCF4D /* User.swift */,
 				EE20666725A5F945009BCF4D /* Post.swift */,
-				EE1C7C8125A9A63800ED32CA /* PostTableViewCell.swift */,
-				EE1C7C8225A9A63800ED32CA /* PostTableViewCell.xib */,
-				EEC0895025AB034000982548 /* ProfileTableViewCell.swift */,
-				EEC0895125AB034000982548 /* ProfileTableViewCell.xib */,
 			);
 			path = BookWorm;
 			sourceTree = "<group>";
@@ -144,6 +141,17 @@
 				EE46219C2587915000E7DCA4 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EE60E28525AC6235005CB7F8 /* TableView Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C7C8125A9A63800ED32CA /* PostTableViewCell.swift */,
+				EE1C7C8225A9A63800ED32CA /* PostTableViewCell.xib */,
+				EEC0895025AB034000982548 /* ProfileTableViewCell.swift */,
+				EEC0895125AB034000982548 /* ProfileTableViewCell.xib */,
+			);
+			path = "TableView Helpers";
 			sourceTree = "<group>";
 		};
 		EEA31C312589BCD600CAF96C /* Main Tabs */ = {
