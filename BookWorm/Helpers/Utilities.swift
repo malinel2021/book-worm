@@ -23,14 +23,14 @@ class Utilities
         textView.layer.cornerRadius = 10.0
     }
     
-    //Function to format rounded text views
+    //Function to format rounded table views
     static func formatTable(tableView: UITableViewCell)
     {
         tableView.layer.borderWidth = 0.5
         tableView.layer.cornerRadius = 10
     }
     
-    //Format to get the current time as a string
+    //Function to get the current time as a string
     static func getTimeString() -> String
     {
         let currentDate = Date()

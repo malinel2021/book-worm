@@ -87,7 +87,7 @@ class PostViewController: UIViewController
         ])
     }
     
-    //Reseting all the text fields on the view
+    //Resetting all the text fields on the view
     func clearTextFields()
     {
         titleTextField.text = Constants.EMPTY
