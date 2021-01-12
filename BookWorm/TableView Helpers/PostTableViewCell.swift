@@ -69,5 +69,4 @@ class PostTableViewCell: UITableViewCell
         self.reviewLabel.text = model.reviewString
         self.timeStamp.text = model.timeString
     }
-    
 }

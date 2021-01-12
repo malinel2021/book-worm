@@ -41,10 +41,41 @@ class Post
         self.timeString = timeString
     }
     
+    //Getters
+    func getBookName () -> String
+    {
+        return bookName
+    }
+    
+    func getPostAuthor () -> String
+    {
+        return postAuthor
+    }
+    
     //Getting the book name and author in one String
     func getBookNameAndAuthor () -> String
     {
         return bookName + Constants.BY + bookAuthor
+    }
+    
+    func getBookAuthor () -> String
+    {
+        return bookAuthor
+    }
+    
+    func getBlurb () -> String
+    {
+        return blurb
+    }
+    
+    func getRatingNumber () -> Int
+    {
+        return ratingNumber
+    }
+    
+    func getReviewString () -> String
+    {
+        return reviewString
     }
 }
 

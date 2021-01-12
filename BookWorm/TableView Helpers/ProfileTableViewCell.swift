@@ -20,11 +20,6 @@ class ProfileTableViewCell: UITableViewCell
     @IBOutlet var reviewLabel: UILabel!
     
     @IBOutlet var timeStamp: UILabel!
-
-    override func setSelected(_ selected: Bool, animated: Bool)
-    {
-        super.setSelected(selected, animated: animated)
-    }
     
     static let identifier = Constants.PROFILE_TABLE_VC
 
@@ -33,7 +28,6 @@ class ProfileTableViewCell: UITableViewCell
         return UINib(nibName: Constants.PROFILE_TABLE_VC, bundle: nil)
     }
     
-    
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -41,6 +35,11 @@ class ProfileTableViewCell: UITableViewCell
         //Formatting table
         Utilities.formatTable(tableView: self)
         self.layer.borderColor = UIColor.blue.cgColor
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool)
+    {
+        super.setSelected(selected, animated: animated)
     }
     
     func configure(with model: Post)
