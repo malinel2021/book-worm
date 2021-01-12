@@ -10,32 +10,25 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell
 {
-    //Book and author name
     @IBOutlet var bookLabel: UILabel!
     
-    //Username
     @IBOutlet var usernameLabel: UILabel!
     
-    //Blurb
     @IBOutlet var blurbLabel: UILabel!
     
-    //Review
     @IBOutlet var reviewLabel: UILabel!
     
-    //Rating stars image
     @IBOutlet var ratingImageView: UIImageView!
     
-    //Timestamp
     @IBOutlet weak var timeStamp: UILabel!
     
-
-    static let identifier = "PostTableViewCell"
+    //Setting identifier
+    static let identifier = Constants.POST_TABLE_VC
 
     static func nib () -> UINib
     {
-        return UINib(nibName: "PostTableViewCell", bundle: nil)
+        return UINib(nibName: Constants.POST_TABLE_VC, bundle: nil)
     }
-    
     
     override func awakeFromNib()
     {
@@ -53,23 +46,24 @@ class PostTableViewCell: UITableViewCell
     
     func configure(with model: Post)
     {
-        self.bookLabel.text = model.bookName + " by " + model.bookAuthor
+        //Setting all the information in the cells
+        self.bookLabel.text = model.bookName + Constants.BY + model.bookAuthor
         self.usernameLabel.text = model.postAuthor
         let ratingNum = model.ratingNumber
         switch ratingNum
         {
         case 1:
-            ratingImageView.image = UIImage(named: "1_star")
+            ratingImageView.image = UIImage(named: Constants.ONE_STAR)
         case 2:
-            ratingImageView.image = UIImage(named: "2_stars")
+            ratingImageView.image = UIImage(named: Constants.TWO_STARS)
         case 3:
-            ratingImageView.image = UIImage(named: "3_stars")
+            ratingImageView.image = UIImage(named: Constants.THREE_STARS)
         case 4:
-            ratingImageView.image = UIImage(named: "4_stars")
+            ratingImageView.image = UIImage(named: Constants.FOUR_STARS)
         case 5:
-            ratingImageView.image = UIImage(named: "5_stars")
+            ratingImageView.image = UIImage(named: Constants.FIVE_STARS)
         default:
-            print("No rating")
+            print(Constants.NO_RATING)
         }
         self.blurbLabel.text = model.blurb
         self.reviewLabel.text = model.reviewString

@@ -14,7 +14,7 @@
 		EE20666825A5F945009BCF4D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20666725A5F945009BCF4D /* Post.swift */; };
 		EE454F2B2579F6AD004FC2C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE454F2A2579F6AD004FC2C5 /* AppDelegate.swift */; };
 		EE454F2D2579F6AD004FC2C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE454F2C2579F6AD004FC2C5 /* SceneDelegate.swift */; };
-		EE454F2F2579F6AD004FC2C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE454F2E2579F6AD004FC2C5 /* ViewController.swift */; };
+		EE454F2F2579F6AD004FC2C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE454F2E2579F6AD004FC2C5 /* LoginViewController.swift */; };
 		EE454F322579F6AD004FC2C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE454F302579F6AD004FC2C5 /* Main.storyboard */; };
 		EE454F342579F6AF004FC2C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE454F332579F6AF004FC2C5 /* Assets.xcassets */; };
 		EE454F372579F6AF004FC2C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE454F352579F6AF004FC2C5 /* LaunchScreen.storyboard */; };
@@ -41,7 +41,7 @@
 		EE454F272579F6AC004FC2C5 /* BookWorm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWorm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE454F2A2579F6AD004FC2C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE454F2C2579F6AD004FC2C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE454F2E2579F6AD004FC2C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE454F2E2579F6AD004FC2C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EE454F312579F6AD004FC2C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE454F332579F6AF004FC2C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE454F362579F6AF004FC2C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				EEA31C312589BCD600CAF96C /* Main Tabs */,
-				EE454F2E2579F6AD004FC2C5 /* ViewController.swift */,
+				EE454F2E2579F6AD004FC2C5 /* LoginViewController.swift */,
 				EE454F3E2579F711004FC2C5 /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
@@ -288,7 +288,7 @@
 				EEC0895725AB0E8300982548 /* MyProfileViewController.swift in Sources */,
 				EEA31C352589BEF000CAF96C /* PostViewController.swift in Sources */,
 				EE1C7C8325A9A63800ED32CA /* PostTableViewCell.swift in Sources */,
-				EE454F2F2579F6AD004FC2C5 /* ViewController.swift in Sources */,
+				EE454F2F2579F6AD004FC2C5 /* LoginViewController.swift in Sources */,
 				EE20666825A5F945009BCF4D /* Post.swift in Sources */,
 				EE454F2B2579F6AD004FC2C5 /* AppDelegate.swift in Sources */,
 				EED003D5257F2FF3002C51AC /* Utilities.swift in Sources */,

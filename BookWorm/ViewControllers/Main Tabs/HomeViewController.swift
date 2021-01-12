@@ -13,7 +13,7 @@ import Firebase
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet var table: UITableView!
-    
+        
     //Array to hold all the posts from Firestore
     var allPosts = [Post]()
     
@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
        
         //Getting the Firestore database documents
         let db = Firestore.firestore()
-        db.collection("Posts").getDocuments { (QuerySnapshot, Error) in
+        db.collection(Constants.POSTS).getDocuments { (QuerySnapshot, Error) in
             //Checking for errors
             let err = Error
             if err != nil
@@ -54,13 +54,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 //For loop to get data for each post and create a Post instance with the data
                 for document in QuerySnapshot!.documents
                 {
-                    let title = document.get("Title")
-                    let postAuthor = document.get("Post Author")
-                    let author = document.get("Author")
-                    let blurb = document.get("Blurb")
-                    let rating = document.get("Rating")
-                    let review = document.get("Review")
-                    let time = document.get("Date")
+                    let title = document.get(Constants.TITLE)
+                    let postAuthor = document.get(Constants.POST_AUTHOR)
+                    let author = document.get(Constants.BOOK_AUTHOR)
+                    let blurb = document.get(Constants.BLURB)
+                    let rating = document.get(Constants.RATING)
+                    let review = document.get(Constants.REVIEW)
+                    let time = document.get(Constants.DATE)
                     let post = Post(bookName: title as! String, postAuthor: postAuthor as! String, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String, timeString: time as! String)
 
                     //Adding each post to the temporary Array, sorting by time with the newest post at the top

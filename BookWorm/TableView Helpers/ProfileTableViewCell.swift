@@ -26,11 +26,11 @@ class ProfileTableViewCell: UITableViewCell
         super.setSelected(selected, animated: animated)
     }
     
-    static let identifier = "ProfileTableViewCell"
+    static let identifier = Constants.PROFILE_TABLE_VC
 
     static func nib () -> UINib
     {
-        return UINib(nibName: "ProfileTableViewCell", bundle: nil)
+        return UINib(nibName: Constants.PROFILE_TABLE_VC, bundle: nil)
     }
     
     
@@ -45,22 +45,23 @@ class ProfileTableViewCell: UITableViewCell
     
     func configure(with model: Post)
     {
-        self.bookLabel.text = model.bookName + " by " + model.bookAuthor
+        //Setting all the information in the cells
+        self.bookLabel.text = model.bookName + Constants.BY + model.bookAuthor
         let ratingNum = model.ratingNumber
         switch ratingNum
         {
         case 1:
-            ratingImageView.image = UIImage(named: "1_star")
+            ratingImageView.image = UIImage(named: Constants.ONE_STAR)
         case 2:
-            ratingImageView.image = UIImage(named: "2_stars")
+            ratingImageView.image = UIImage(named: Constants.TWO_STARS)
         case 3:
-            ratingImageView.image = UIImage(named: "3_stars")
+            ratingImageView.image = UIImage(named: Constants.THREE_STARS)
         case 4:
-            ratingImageView.image = UIImage(named: "4_stars")
+            ratingImageView.image = UIImage(named: Constants.FOUR_STARS)
         case 5:
-            ratingImageView.image = UIImage(named: "5_stars")
+            ratingImageView.image = UIImage(named: Constants.FIVE_STARS)
         default:
-            print("No rating")
+            print(Constants.NO_RATING)
         }
         self.blurbLabel.text = model.blurb
         self.reviewLabel.text = model.reviewString

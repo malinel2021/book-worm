@@ -50,7 +50,7 @@ class Utilities
     Regex generated using https://iosdevcenters.blogspot.com/2017/06/password-validation-in-swift-30.html
 */
     static func isPasswordValid( password : String) -> Bool
-    {
+    {        
         let passwordPattern = "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}"
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordPattern)
         return passwordTest.evaluate(with: password)

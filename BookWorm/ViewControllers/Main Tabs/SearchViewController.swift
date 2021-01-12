@@ -10,15 +10,17 @@ import Foundation
 import UIKit
 import Firebase
 
-//https://vasundharavision.com/blog/ios/how-to-use-search-bar-in-table-view#664
+//Tutorial used to help configure search bar: https://vasundharavision.com/blog/ios/how-to-use-search-bar-in-table-view#664
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate
 {
     @IBOutlet var table: UITableView!
     
     @IBOutlet var searchBar: UISearchBar!
     
+    //Array to hold all the posts from Firestore
     var rawData = [Post]()
     
+    //Array to hold all posts from Firestore to be displayed when searching
     var searchData = [Post]()
     
     override func viewDidLoad()
@@ -33,16 +35,22 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         //Set up search bar
         searchBar.delegate = self
         
+        //Setting up elements on the view
         setUpElements()
         
+        //Initialising array with search data
         searchData = rawData
     }
     
     func setUpElements()
     {
+        //Creating a temporary Array variable to hold posts
         var tempPosts = [Post]()
+        
+        //Getting the Firestore database documents
         let db = Firestore.firestore()
-        db.collection("Posts").getDocuments{ (QuerySnapshot, Error) in
+        db.collection(Constants.POSTS).getDocuments{ (QuerySnapshot, Error) in
+            //Checking for errors
             let err = Error
             if err != nil
             {
@@ -53,14 +61,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 //For loop to get data for each post and create a Post instance with the data
                 for document in QuerySnapshot!.documents
                 {
-                    let postAuthor = document.get("Post Author") as! String
-                    let title = document.get("Title")
-                    let author = document.get("Author")
-                    let blurb = document.get("Blurb")
-                    let rating = document.get("Rating")
-                    let review = document.get("Review")
-                    let time = document.get("Date")
-                    let post = Post(bookName: title as! String, postAuthor: postAuthor, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String, timeString: time as! String)
+                    let title = document.get(Constants.TITLE)
+                    let postAuthor = document.get(Constants.POST_AUTHOR)
+                    let author = document.get(Constants.BOOK_AUTHOR)
+                    let blurb = document.get(Constants.BLURB)
+                    let rating = document.get(Constants.RATING)
+                    let review = document.get(Constants.REVIEW)
+                    let time = document.get(Constants.DATE)
+                    let post = Post(bookName: title as! String, postAuthor: postAuthor as! String, bookAuthor: author as! String, blurb: blurb as! String, rating: rating as! Int, reviewString: review as! String, timeString: time as! String)
                         
                     //Adding each post to the temporary Array, sorting by time with the newest post at the top
                     tempPosts.append(post)
@@ -90,9 +98,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    //What to do when the search bar is cancelled
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
     {
-        searchBar.text = ""
+        searchBar.text = Constants.EMPTY
         searchData = rawData
         searchBar.endEditing(true)
         table.reloadData()
@@ -103,7 +112,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchData = searchText.isEmpty ? rawData : rawData.filter
         {
             (item: Post) -> Bool in
-        // If dataItem matches the searchText, return true to include it
+            //If the book name or author matches the searched data, return the range
             let str = item.getBookNameAndAuthor()
             return str.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }

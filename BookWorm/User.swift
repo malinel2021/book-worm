@@ -11,11 +11,11 @@ import Foundation
 
 class User
 {
-    var username = ""
+    var username = Constants.EMPTY
     
     init()
     {
-        username = ""
+        username = Constants.EMPTY
     }
     
     init(username: String)

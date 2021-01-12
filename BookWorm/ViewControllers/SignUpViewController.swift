@@ -13,11 +13,6 @@ import FirebaseFirestore
 
 class SignUpViewController: UIViewController
 {
-    
-    var myBool:Bool = false
-    
-    var currentUser: User!
-    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var usernameTextField: UITextField!
@@ -27,6 +22,12 @@ class SignUpViewController: UIViewController
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
+    
+    //Initialising boolean to signify if segue should perform
+    var myBool:Bool = false
+    
+    //Creating a User instance for the current user
+    var currentUser: User!
     
     override func viewDidLoad()
     {
@@ -38,7 +39,7 @@ class SignUpViewController: UIViewController
     
     func setUpElements()
     {
-        //Hiding the error label
+        //Hiding the error label, changing aesthetics of button
         errorLabel.alpha = 0
         Utilities.circularButton(button: signUpButton)
     }
@@ -46,7 +47,7 @@ class SignUpViewController: UIViewController
     //Function to check if log in button should perform segue to home screen
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
     {
-        if identifier == "segue2"
+        if identifier == Constants.SEGUE_2
         {
             //Checking if the log in worked
             if  myBool == false
@@ -59,16 +60,13 @@ class SignUpViewController: UIViewController
         return true
     }
 
-    /*  Check the text fields and validate that the data is correct. If
-        everything is correct it will return nil, if not it will display
-        the error message
-     */
+    //Check the text fields and validate that the data is correct. If everything is correct it will return nil, if not it will display the error message
     func validateFields() -> String?
     {
         //Check that all fields are filled in
-        if usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+        if usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == Constants.EMPTY || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == Constants.EMPTY || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == Constants.EMPTY
         {
-            return "Please fill in all fields."
+            return Constants.FILL_FIELDS
         }
         
         //Check if password is secure
@@ -76,19 +74,20 @@ class SignUpViewController: UIViewController
         if Utilities.isPasswordValid(password: cleanedPassword) == false
         {
             //Password is not secure enough
-            return "Please make sure your password has at least 8 characters, contains a special character and a number."
+            return Constants.PASSWORD_FORMAT
         }
         
         let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if Utilities.isEmailValid(email: cleanedEmail) == false
         {
             //If email does not belong to school domain
-            return "Please make sure you are using your CIS email."
+            return Constants.EMAIL_FORMAT
         }
 
         return nil
     }
     
+    //Try to create a new user if the sign up button is tapped
     @IBAction func signupButtonTapped(_ sender: Any)
     {
         //Validate the fields
@@ -113,28 +112,28 @@ class SignUpViewController: UIViewController
                 if err != nil
                 {
                     //There was an error creating the user
-                    self.showError(message: "Error creating user")
+                    self.showError(message: Constants.ERR_CREATING_USER)
                 }
                 else
                 {
                     //User was created successfully, now store username
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["username": username, "uid": result!.user.uid]) { (error) in
+                    db.collection(Constants.USERS).addDocument(data: [Constants.USERNAME: username, Constants.UID: result!.user.uid]) { (error) in
                         if error != nil
                         {
                             //Show error message
-                            self.showError(message: "Error saving user data")
+                            self.showError(message: Constants.ERR_SAVING_USER)
                         }
                     }
                 }
             }
             //Performing segue
             self.currentUser = User(username: email)
-            self.performSegue(withIdentifier: "segue2", sender: (Any).self)
+            self.performSegue(withIdentifier: Constants.SEGUE_2, sender: (Any).self)
         }
     }
     
-    //Sending information to the post view controller
+    //Sending the information about the current user across to the other view controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if let barViewControllers = segue.destination as? UITabBarController

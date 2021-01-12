@@ -18,22 +18,17 @@ class Post
     var ratingNumber: Int!
     var reviewString: String!
     var timeString: String!
-//    var bookImageName = ""
-//    var ratingImageName = ""
     
     init()
     {
-        self.bookName = ""
-        self.postAuthor = ""
-        self.bookAuthor = ""
-        self.blurb = ""
-        self.ratingNumber = 0
-        self.reviewString = ""
-        self.timeString = ""
-//        self.bookImageName = ""
-//        self.ratingImageName = ""
+        self.bookName = Constants.EMPTY
+        self.postAuthor = Constants.EMPTY
+        self.bookAuthor = Constants.EMPTY
+        self.blurb = Constants.EMPTY
+        self.ratingNumber = Constants.ZERO
+        self.reviewString = Constants.EMPTY
+        self.timeString = Constants.EMPTY
     }
-    
     
     init(bookName: String, postAuthor: String, bookAuthor: String, blurb: String, rating: Int, reviewString: String, timeString: String)
     {
@@ -46,72 +41,10 @@ class Post
         self.timeString = timeString
     }
     
-    //Setters
-    func setBookName(name: String)
-    {
-        self.bookName = name
-    }
-    
-    
-    func setPostAuthor(user: String)
-    {
-        self.postAuthor = user
-    }
-    
-    func setBookAuthor(name: String)
-    {
-        self.bookAuthor = name
-    }
-    
-    func setBlub(blurb: String)
-    {
-        self.blurb = blurb
-    }
-    
-    func setRatingNumber(num: Int)
-    {
-        self.ratingNumber = num
-    }
-    
-    func setReviewString(review: String)
-    {
-        self.reviewString = review
-    }
-    
-    //Getters
-    func getBookName () -> String
-    {
-        return bookName
-    }
-    
+    //Getting the book name and author in one String
     func getBookNameAndAuthor () -> String
     {
-        return bookName + " by " + bookAuthor
-    }
-    
-    func getPostAuthor () -> String
-    {
-        return postAuthor
-    }
-    
-    func getBookAuthor () -> String
-    {
-        return bookAuthor
-    }
-    
-    func getBlurb () -> String
-    {
-        return blurb
-    }
-    
-    func getRatingNumber () -> Int
-    {
-        return ratingNumber
-    }
-    
-    func getReviewString () -> String
-    {
-        return reviewString
+        return bookName + Constants.BY + bookAuthor
     }
 }
 
