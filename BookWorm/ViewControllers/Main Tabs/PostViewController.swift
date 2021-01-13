@@ -69,6 +69,7 @@ class PostViewController: UIViewController
         let rating = Int(ratingSlider.value)
         let review = reviewTextField.text!
         let time = Utilities.getTimeString()
+        
         currentPost = Post(bookName: title, postAuthor: postAuthor, bookAuthor: author, blurb: blurb, rating: rating, reviewString: review, timeString: time)
     }
     

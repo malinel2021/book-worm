@@ -16,6 +16,8 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var table: UITableView!
     
+    @IBOutlet weak var logoutButton: UIButton!
+    
     //Array to hold all of the current user's posts from Firestore
     var userPosts = [Post]()
     
@@ -37,6 +39,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 
         //Setting up elements on the view
         setUpElements()
+        logoutButton.layer.cornerRadius = 5.0
     }
     
     func setUpElements()
@@ -98,5 +101,18 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         cell.configure(with: userPosts[indexPath.row])
         return cell
+    }
+    
+    @IBAction func logoutButtonTapped(_ sender: Any)
+    {
+        let firebaseAuth = Auth.auth()
+        do
+        {
+            try firebaseAuth.signOut()
+        }
+        catch let signOutError as NSError
+        {
+            print ("Error signing out: %@", signOutError)
+        }
     }
 }

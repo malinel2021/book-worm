@@ -40,4 +40,5 @@ struct Constants
     static let FOUR_STARS = "4_stars"
     static let FIVE_STARS = "5_stars"
     static let NO_RATING = "No rating"
+    static let ERR_SIGN_OUT = "Error signing out: %@"
 }
