@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class User
 {
     var username = Constants.EMPTY
