@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let err = Error
             if err != nil
             {
-                print("Error getting documents: \(err)")
+                print("Error getting documents! : \(err)")
             }
             else
             {
